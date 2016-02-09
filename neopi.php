@@ -18,7 +18,7 @@ final class NeoPI
     public static $csv = false;
     public static $report_limit = 10;
     
-    public static $path = '.';
+    public static $path = __DIR__;
     public static $extensions = array('php');
     public static $files = array();
     public static $isCLI;
@@ -46,20 +46,20 @@ final class NeoPI
             'csv::'
         ));
         if (isset($opts['h']) || isset($opts['help'])) {
-            die('NeoPI usage:
--h, --help <help info> [default=.]
--p, --path <start directory> [default=.]
--e, --extensions <file extensions to scan delimiter ;> [default=php]
--a, --all <Run all (useful) tests [Entropy, Longest Word, IC, Signature]> [default=false]
---ic <Run IC test> [default=true]
---entropy <Run entropy Test> [default=true]
---longestword <Run longest word test> [default=true]
---signature <Run signature test> [default=true]
---supersignature <Run SUPER-signature test> [default=true]
---eval <Run signiture test for the eval> [default=true]
---zlib <Run compression Test> [default=true]
--l, --report_limit <Limit files in report lists> [default=10]
--c, --csv <Save Result in CSV file> [default=false]' . PHP_EOL);
+            die("NeoPI usage:
+\t-h, --help <help info> [default=__DIR__]
+\t-p, --path <start directory> [default=.]
+\t-e, --extensions <file extensions to scan delimiter ;> [default=php]
+\t-a, --all <Run all (useful) tests [Entropy, Longest Word, IC, Signature]> [default=false]
+\t--ic <Run IC test> [default=true]
+\t--entropy <Run entropy Test> [default=true]
+\t--longestword <Run longest word test> [default=true]
+\t--signature <Run signature test> [default=true]
+\t--supersignature <Run SUPER-signature test> [default=true]
+\t--eval <Run signiture test for the eval> [default=true]
+\t--zlib <Run compression Test> [default=true]
+\t-l, --report_limit <Limit files in report lists> [default=10]
+\t-c, --csv <Save Result in CSV file> [default=false]" . PHP_EOL);
         } else {
             if (isset($opts['p']) || isset($opts['path'])) {
                 self::$path = isset($opts['p']) ? $opts['p'] : $opts['path'];
