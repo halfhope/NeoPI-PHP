@@ -19,7 +19,7 @@ final class NeoPI
     public static $report_limit = 10;
     
     public static $path = __DIR__;
-    public static $extensions = array('php');
+    public static $extensions = array('php', 'asp', 'aspx', 'sh', 'bash', 'zsh', 'csh', 'tsch', 'pl', 'py', 'txt', 'cgi', 'cfm');
     public static $files = array();
     public static $isCLI;
     private static $opts;
